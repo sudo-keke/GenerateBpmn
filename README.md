@@ -4,7 +4,7 @@
 BPMN 底层实际是 XML:
 
 * 构成 BPMN 的 XML 主要标签构成：
-
+````
        //整体定义标签
        <definitions> </definitions>
        
@@ -41,12 +41,12 @@ BPMN 底层实际是 XML:
        //边缘，可以理解为连接线(由谁怎样连接到谁，直线还曲线...)
        <bpmndi:BPMNEdge> </bpmndi:BPMNEdge>
        
-       
-* [流程中直线单节点单任务 XML（无法打开时将后缀 .bpmn 改为 .xml）](src\main\resources\templates\single.bpmn)
-* ![单节点](src/main/resources/templates/single.png)
+````  
+* [流程中直线单节点单任务 XML（无法打开时将后缀 .bpmn 改为 .xml）](https://github.com/yan-qiang/GenerateBpmn/blob/main/src/main/resources/templates/single.bpmn)
+![单节点](src/main/resources/templates/single.png)
 
-* [流程中某一节点多任务 XML（无法打开时将后缀 .bpmn 改为 .xml）](src\main\resources\templates\multi.bpmn)
-* ![多节点](src/main/resources/templates/multi.png)
+* [流程中某一节点多任务 XML（无法打开时将后缀 .bpmn 改为 .xml）](https://github.com/yan-qiang/GenerateBpmn/blob/main/src/main/resources/templates/multi.bpmn)
+![多节点](src/main/resources/templates/multi.png)
 
 ### 指南
 
@@ -71,7 +71,7 @@ BPMN 底层实际是 XML:
   
   **支持自定义流程**
    
-   * [自定义流程相当于重写 producedXmlStr() 方法](src\main\java\com\kk\activity\util\AutoGenerateFlowUtils.java)
+   * [自定义流程相当于重写 producedXmlStr() 方法](https://github.com/yan-qiang/GenerateBpmn/blob/main/src/main/java/com/kk/activity/util/AutoGenerateFlowUtils.java)
    
     大致思想如下：
     1、 创建一个流程 QhProcess
@@ -90,4 +90,4 @@ BPMN 底层实际是 XML:
     
     
   PS: 目前连接线只有简单的几种，想要实现多种形态的线，
-  [参考 linkEndwiseLongLineTo() 方法](src/main/java/com/kk/activity/entity/base/FlowNode.java)
+  [参考 linkEndwiseLongLineTo() 方法](https://github.com/yan-qiang/GenerateBpmn/blob/main/src/main/java/com/kk/activity/entity/base/FlowNode.java)
