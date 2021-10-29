@@ -1,4 +1,4 @@
-package com.yq.activity.entity.base;
+package com.kk.activity.entity.base;
 
 
 import org.apache.commons.lang3.StringUtils;
@@ -20,6 +20,12 @@ import java.util.List;
  */
 public class DrawBpmnXmlUtils {
 
+
+    /**
+     * @author KK
+     * @date 2021/10/29
+     * @description 生成 XML 以用来转为 BPMN，具体 xml 结构，查看 templates\multi.bpmn 或 templates\single.bpmn
+     */
     public static Document generateXml(QhProcess qhProcess) {
         try {
             Document document = DocumentHelper.createDocument();
@@ -139,8 +145,8 @@ public class DrawBpmnXmlUtils {
 
     /**
      * 添加流程节点坐标信息，子标签填充
-     *  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
-     *  </bpmndi:BPMNDiagram>
+     * <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+     * </bpmndi:BPMNDiagram>
      */
     private static void produceDiagram(Element root, QhProcess qhProcess) {
         Element diagram = root.addElement("bpmndi:BPMNDiagram");

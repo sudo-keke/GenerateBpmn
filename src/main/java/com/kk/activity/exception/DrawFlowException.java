@@ -1,4 +1,4 @@
-package com.yq.activity.exception;
+package com.kk.activity.exception;
 
 /**
  * @author KK

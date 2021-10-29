@@ -1,9 +1,9 @@
-package com.yq.activity.util;
+package com.kk.activity.util;
 
 
-import com.yq.activity.entity.base.*;
-import com.yq.activity.entity.common.FlowNodeBean;
-import com.yq.activity.entity.common.NodeInfoBean;
+import com.kk.activity.entity.base.*;
+import com.kk.activity.entity.common.FlowNodeBean;
+import com.kk.activity.entity.common.NodeInfoBean;
 import org.dom4j.Document;
 import org.springframework.util.CollectionUtils;
 

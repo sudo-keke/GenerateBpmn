@@ -1,10 +1,10 @@
-package com.yq.activity;
+package com.kk.activity;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * @author keke
+ * @author KK
  */
 @SpringBootApplication
 public class GenerateBpmnApplication {

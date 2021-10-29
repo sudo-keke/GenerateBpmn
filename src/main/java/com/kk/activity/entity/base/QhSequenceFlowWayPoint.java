@@ -1,6 +1,6 @@
-package com.yq.activity.entity.base;
+package com.kk.activity.entity.base;
 
-import com.yq.activity.exception.DrawFlowException;
+import com.kk.activity.exception.DrawFlowException;
 import lombok.Data;
 import lombok.experimental.Accessors;
 

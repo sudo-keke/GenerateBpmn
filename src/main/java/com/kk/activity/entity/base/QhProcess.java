@@ -1,4 +1,4 @@
-package com.yq.activity.entity.base;
+package com.kk.activity.entity.base;
 
 import lombok.Data;
 import lombok.experimental.Accessors;

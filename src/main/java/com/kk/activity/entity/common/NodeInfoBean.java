@@ -1,4 +1,4 @@
-package com.yq.activity.entity.common;
+package com.kk.activity.entity.common;
 
 import lombok.Getter;
 
