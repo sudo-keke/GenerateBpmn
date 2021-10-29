@@ -19,7 +19,7 @@ import java.util.stream.Collectors;
 public class AutoGenerateFlowUtils {
 
     /**
-     * @param processId   流程id，e.g. projectApprove
+     * @param processId   流程id，e.g. projectApprove (流程id相同会被覆盖)
      * @param processName 流程名称，e.g. XXX审批流程
      * @param nodeList    流程节点信息
      * @return java.lang.String

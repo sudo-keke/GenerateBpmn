@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/test">
+  <process id="SICK_LEAVE_PROCESS" name="病假流程" isExecutable="true">
+    <startEvent id="start" name="startEvent"/>
+    <userTask id="submitTask" name="员工提交" activiti:assignee="100001"/>
+    <userTask id="PrincipalTask-1" name="组长" activiti:assignee="1000021"/>
+    <userTask id="PrincipalTask-2" name="副组长" activiti:assignee="1000022"/>
+    <userTask id="PrincipalTask-3" name="部门负责人" activiti:assignee="1000023"/>
+    <userTask id="HRTask" name="HR审批" activiti:assignee="100003"/>
+    <endEvent id="end" name="endEvent"/>
+    <sequenceFlow id="start_submitTask" sourceRef="start" targetRef="submitTask"/>
+    <sequenceFlow id="submitTask_parallelGatewayStart1" sourceRef="submitTask" targetRef="parallelGatewayStart1"/>
+    <sequenceFlow id="parallelGatewayStart1_PrincipalTask-1" sourceRef="parallelGatewayStart1" targetRef="PrincipalTask-1"/>
+    <sequenceFlow id="PrincipalTask-1_parallelGatewayEnd1" sourceRef="PrincipalTask-1" targetRef="parallelGatewayEnd1"/>
+    <sequenceFlow id="parallelGatewayStart1_PrincipalTask-2" sourceRef="parallelGatewayStart1" targetRef="PrincipalTask-2"/>
+    <sequenceFlow id="PrincipalTask-2_parallelGatewayEnd1" sourceRef="PrincipalTask-2" targetRef="parallelGatewayEnd1"/>
+    <sequenceFlow id="parallelGatewayStart1_PrincipalTask-3" sourceRef="parallelGatewayStart1" targetRef="PrincipalTask-3"/>
+    <sequenceFlow id="PrincipalTask-3_parallelGatewayEnd1" sourceRef="PrincipalTask-3" targetRef="parallelGatewayEnd1"/>
+    <sequenceFlow id="parallelGatewayEnd1_HRTask" sourceRef="parallelGatewayEnd1" targetRef="HRTask"/>
+    <sequenceFlow id="HRTask_end" sourceRef="HRTask" targetRef="end"/>
+    <parallelGateway id="parallelGatewayStart1" name="Parallel Gateway Start1"/>
+    <parallelGateway id="parallelGatewayEnd1" name="Parallel Gateway End1"/>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_SICK_LEAVE_PROCESS">
+    <bpmndi:BPMNPlane id="BPMNPlane_SICK_LEAVE_PROCESS" bpmnElement="SICK_LEAVE_PROCESS">
+      <bpmndi:BPMNShape id="BPMNShape_start" bpmnElement="start">
+        <omgdc:Bounds height="35" width="35" x="120" y="90"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_end" bpmnElement="end">
+        <omgdc:Bounds height="35" width="35" x="910" y="90"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_submitTask" bpmnElement="submitTask">
+        <omgdc:Bounds height="55" width="105" x="215" y="80"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_PrincipalTask-1" bpmnElement="PrincipalTask-1">
+        <omgdc:Bounds height="55" width="105" x="480" y="80"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_PrincipalTask-2" bpmnElement="PrincipalTask-2">
+        <omgdc:Bounds height="55" width="105" x="480" y="200"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_PrincipalTask-3" bpmnElement="PrincipalTask-3">
+        <omgdc:Bounds height="55" width="105" x="480" y="300"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_HRTask" bpmnElement="HRTask">
+        <omgdc:Bounds height="55" width="105" x="745" y="80"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_parallelGatewayStart1" bpmnElement="parallelGatewayStart1">
+        <omgdc:Bounds height="40" width="40" x="380" y="87"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_parallelGatewayEnd1" bpmnElement="parallelGatewayEnd1">
+        <omgdc:Bounds height="40" width="40" x="645" y="87"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="BPMNEdge_sequenceFlow_start_submitTask" bpmnElement="start_submitTask">
+        <omgdi:waypoint x="155" y="107"/>
+        <omgdi:waypoint x="215" y="107"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_sequenceFlow_submitTask_parallelGatewayStart1" bpmnElement="submitTask_parallelGatewayStart1">
+        <omgdi:waypoint x="320" y="107"/>
+        <omgdi:waypoint x="380" y="107"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_sequenceFlow_parallelGatewayStart1_PrincipalTask-1" bpmnElement="parallelGatewayStart1_PrincipalTask-1">
+        <omgdi:waypoint x="420" y="107"/>
+        <omgdi:waypoint x="480" y="107"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_sequenceFlow_PrincipalTask-1_parallelGatewayEnd1" bpmnElement="PrincipalTask-1_parallelGatewayEnd1">
+        <omgdi:waypoint x="585" y="107"/>
+        <omgdi:waypoint x="645" y="107"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_sequenceFlow_parallelGatewayStart1_PrincipalTask-2" bpmnElement="parallelGatewayStart1_PrincipalTask-2">
+        <omgdi:waypoint x="400" y="127"/>
+        <omgdi:waypoint x="400" y="227"/>
+        <omgdi:waypoint x="480" y="227"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_sequenceFlow_PrincipalTask-2_parallelGatewayEnd1" bpmnElement="PrincipalTask-2_parallelGatewayEnd1">
+        <omgdi:waypoint x="585" y="227"/>
+        <omgdi:waypoint x="665" y="227"/>
+        <omgdi:waypoint x="665" y="27"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_sequenceFlow_parallelGatewayStart1_PrincipalTask-3" bpmnElement="parallelGatewayStart1_PrincipalTask-3">
+        <omgdi:waypoint x="400" y="127"/>
+        <omgdi:waypoint x="400" y="327"/>
+        <omgdi:waypoint x="480" y="327"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_sequenceFlow_PrincipalTask-3_parallelGatewayEnd1" bpmnElement="PrincipalTask-3_parallelGatewayEnd1">
+        <omgdi:waypoint x="585" y="327"/>
+        <omgdi:waypoint x="665" y="327"/>
+        <omgdi:waypoint x="665" y="127"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_sequenceFlow_parallelGatewayEnd1_HRTask" bpmnElement="parallelGatewayEnd1_HRTask">
+        <omgdi:waypoint x="685" y="107"/>
+        <omgdi:waypoint x="745" y="107"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_sequenceFlow_HRTask_end" bpmnElement="HRTask_end">
+        <omgdi:waypoint x="850" y="107"/>
+        <omgdi:waypoint x="910" y="107"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

@@ -11,7 +11,7 @@ import lombok.Getter;
 public class NodeInfoBean {
 
     /**
-     * 节点Id(英文)，e.g. submitTask
+     * 节点Id(英文)，e.g. submitTask （相同会被覆盖）
      */
     private final String nodeId;
 
@@ -21,7 +21,7 @@ public class NodeInfoBean {
     private final String nodeName;
 
     /**
-     * 当前节点的用户id e.g. 1000105
+     * 当前节点的用户id e.g. 1000105 （相同会被覆盖）
      */
     private final String assignee;
 
